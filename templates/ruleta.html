@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruleta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ruleta.css') }}">
+    <script src="{{ url_for('static', filename='js/ruleta.js') }}"></script>
+
+</head>
+<body>
+
+    <div class="tabla-ruleta">
+        <img src="{{ url_for('static', filename='images/RuletaBackground.png') }}" alt="Tabla Ruleta" class="img-fullscreen" />
+
+        <div id="betting-area" class="drop-zone">
+            <div class="drop-zone" data-accepts="ficha" id="zone-0">0</div>
+
+            <div class="drop-zone" data-accepts="ficha" id="zone-1_18">1-18</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-par">Par</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-rojo">Rojo</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-negro">Negro</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-impar">Impar</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-19_36">19-36</div>
+
+            <div class="drop-zone" data-accepts="ficha" id="zone-1_12">1st 12</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-2_12">2nd 12</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-3_12">3rd 12</div>
+
+            <div class="drop-zone" data-accepts="ficha" id="zone-2_1">2to1</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-2_2">2to1</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-2_3">2to1</div>
+
+            <div class="drop-zone" data-accepts="ficha" id="zone-1">1</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-4">4</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-7">7</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-10">10</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-13">13</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-16">16</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-19">19</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-22">22</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-25">25</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-28">25</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-31">31</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-34">34</div>
+
+            <div class="drop-zone" data-accepts="ficha" id="zone-2">2</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-5">5</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-8">8</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-11">11</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-14">14</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-17">17</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-20">20</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-23">23</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-26">26</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-29">29</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-32">32</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-35">35</div>
+
+            <div class="drop-zone" data-accepts="ficha" id="zone-3">3</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-6">6</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-9">9</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-12">12</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-15">15</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-18">18</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-21">21</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-24">24</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-27">27</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-30">30</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-33">33</div>
+            <div class="drop-zone" data-accepts="ficha" id="zone-36">36</div>
+
+
+        </div>
+
+        <form action="/girar-ruleta" method="post">
+            <button type="submit" class="ruleta-botones" id="boton-girar">GIRAR</button>
+        </form>
+
+        <button class="ruleta-botones" id="boton-limpiar">LIMPIAR</button>
+
+        <div class="ficha" id="ficha-5">
+            <img src="{{ url_for('static', filename='images/ficha_5.png') }}"/>
+        </div>
+
+        <div class="ficha" id="ficha-10">
+            <img src="{{ url_for('static', filename='images/ficha_10.png') }}"/>
+        </div>
+
+        <div class="ficha" id="ficha-20">
+            <img src="{{ url_for('static', filename='images/ficha_20.png') }}"/>
+        </div>
+
+        <div class="ficha" id="ficha-50">
+            <img src="{{ url_for('static', filename='images/ficha_50.png') }}"/>
+        </div>
+
+        <div class="ficha" id="ficha-100">
+            <img src="{{ url_for('static', filename='images/ficha_100.png') }}"/>
+        </div>
+
+</body>
+</html>

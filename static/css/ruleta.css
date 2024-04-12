@@ -1,0 +1,539 @@
+/*Imagen de fondo */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: url('/static/images/RuletaBackground.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.tabla-ruleta {
+    position: relative;
+    width: 2077px;
+    height: 1195px;
+}
+
+/*Resto de classes*/
+.ruleta-botones {
+    position: absolute;
+}
+
+.text-container {
+    position: absolute;
+    top: 690px;
+    left: 300px;
+    color: white;
+    padding: 10px;
+}
+
+.ficha {
+    position: absolute;
+    cursor: pointer;
+}
+
+.ficha img{
+    width: 60px;
+    height: 60px;
+}
+
+.drop-zone {
+    border: 2px dashed #999;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+/*Instancias por separado*/
+#zone-0 {
+    position: absolute;
+    width: 80px;
+    height: 275px;
+    top: 150px;
+    left: 55px;
+    opacity: 50%;
+}
+
+#zone-1{
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 157px;
+    opacity: 50%;
+}
+
+#zone-4{
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 276px;
+    opacity: 50%;
+}
+
+#zone-7 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 396px;
+    opacity: 50%;
+}
+
+#zone-10 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 515px;
+    opacity: 50%;
+}
+
+#zone-13 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 636px;
+    opacity: 50%;
+}
+
+#zone-16 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 755px;
+    opacity: 50%;
+}
+
+#zone-19 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 877px;
+    opacity: 50%;
+}
+
+#zone-22 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 996px;
+    opacity: 50%;
+}
+
+#zone-25 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 1117px;
+    opacity: 50%;
+}
+
+#zone-28 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 1235px;
+    opacity: 50%;
+}
+
+#zone-31 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 1357px;
+    opacity: 50%;
+}
+
+#zone-34 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 150px;
+    left: 1475px;
+    opacity: 50%;
+}
+
+#zone-2{
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 157px;
+    opacity: 50%;
+}
+
+#zone-5{
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 276px;
+    opacity: 50%;
+}
+
+#zone-8 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 396px;
+    opacity: 50%;
+}
+
+#zone-11 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 515px;
+    opacity: 50%;
+}
+
+#zone-14 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 636px;
+    opacity: 50%;
+}
+
+#zone-17 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 755px;
+    opacity: 50%;
+}
+
+#zone-20 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 877px;
+    opacity: 50%;
+}
+
+#zone-23 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 996px;
+    opacity: 50%;
+}
+
+#zone-26 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 1117px;
+    opacity: 50%;
+}
+
+#zone-29 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 1235px;
+    opacity: 50%;
+}
+
+#zone-32 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 1357px;
+    opacity: 50%;
+}
+
+#zone-35 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 250px;
+    left: 1475px;
+    opacity: 50%;
+}
+
+#zone-3{
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 157px;
+    opacity: 50%;
+}
+
+#zone-6{
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 276px;
+    opacity: 50%;
+}
+
+#zone-9 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 396px;
+    opacity: 50%;
+}
+
+#zone-12 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 515px;
+    opacity: 50%;
+}
+
+#zone-15 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 636px;
+    opacity: 50%;
+}
+
+#zone-18 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 755px;
+    opacity: 50%;
+}
+
+#zone-21 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 877px;
+    opacity: 50%;
+}
+
+#zone-24 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 996px;
+    opacity: 50%;
+}
+
+#zone-27 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 1117px;
+    opacity: 50%;
+}
+
+#zone-30 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 1235px;
+    opacity: 50%;
+}
+
+#zone-33 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 1357px;
+    opacity: 50%;
+}
+
+#zone-36 {
+    position: absolute;
+    width: 97px;
+    height: 76px;
+    top: 350px;
+    left: 1475px;
+    opacity: 50%;
+}
+
+#zone-2_1{
+    position: absolute;
+    width: 60px;
+    height: 76px;
+    top: 150px;
+    left: 1595px;
+    opacity: 50%;
+}
+
+#zone-2_2{
+    position: absolute;
+    width: 60px;
+    height: 76px;
+    top: 250px;
+    left: 1595px;
+    opacity: 50%;
+}
+
+#zone-2_3{
+    position: absolute;
+    width: 60px;
+    height: 76px;
+    top: 350px;
+    left: 1595px;
+    opacity: 50%;
+}
+
+#zone-1_12{
+    position: absolute;
+    width: 457px;
+    height: 36px;
+    top: 90px;
+    left: 157px;
+    opacity: 50%;
+}
+
+#zone-2_12{
+    position: absolute;
+    width: 457px;
+    height: 36px;
+    top: 90px;
+    left: 638px;
+    opacity: 50%;
+}
+
+#zone-3_12{
+    position: absolute;
+    width: 457px;
+    height: 36px;
+    top: 90px;
+    left: 1117px;
+    opacity: 50%;
+}
+
+#zone-1_18{
+    position: absolute;
+    width: 215px;
+    height: 55px;
+    top: 450px;
+    left: 157px;
+    opacity: 50%;
+}
+
+#zone-19_36{
+    position: absolute;
+    width: 215px;
+    height: 55px;
+    top: 450px;
+    left: 1359px;
+    opacity: 50%;
+}
+
+#zone-par{
+    position: absolute;
+    width: 155px;
+    height: 55px;
+    top: 450px;
+    left: 428px;
+    opacity: 50%;
+}
+
+#zone-impar{
+    position: absolute;
+    width: 155px;
+    height: 55px;
+    top: 450px;
+    left: 1149px;
+    opacity: 50%;
+}
+
+#zone-rojo{
+    position: absolute;
+    width: 155px;
+    height: 55px;
+    top: 450px;
+    left: 668px;
+    opacity: 50%;
+}
+
+#zone-negro{
+    position: absolute;
+    width: 155px;
+    height: 55px;
+    top: 450px;
+    left: 909px;
+    opacity: 50%;
+}
+
+
+#ficha-5 {
+    top: 650px;
+    left: 850px;
+}
+
+#ficha-10 {
+    top: 650px;
+    left: 940px;
+}
+
+#ficha-20 {
+    top: 650px;
+    left: 1030px;
+}
+
+#ficha-50 {
+    top: 650px;
+    left: 1120px;
+}
+
+#ficha-100 {
+    top: 650px;
+    left: 1210px;
+}
+
+
+#boton-girar {
+    top: 690px;
+    left: 50px;
+
+    width: 195px;
+    height: 70px;
+
+    background-color: #f00;
+    color: #fff;
+}
+
+#boton-limpiar {
+    top: 829px;
+    left: 50px;
+
+    width: 215px;
+    height: 60px;
+
+    background-color: #f00;
+    color: #fff;
+}

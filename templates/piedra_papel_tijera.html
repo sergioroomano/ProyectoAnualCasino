@@ -1,0 +1,22 @@
+<!-- templates/rock_paper_scissors.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    {% if user_choice %}
+        <p>Tu: {{ user_choice }}</p>
+        <p>Servidor: {{ server_choice }}</p>
+        <p>Resultado: {{ result }}</p>
+        <button onclick="location.href='/piedra-papel-tijera'">Jugar Otra Vez</button>
+    {% else %}
+        <form action="/piedra-papel-tijera" method="post">
+            <button name="choice" value="piedra">Piedra</button>
+            <button name="choice" value="papel">Papel</button>
+            <button name="choice" value="tijera">Tijera</button>
+        </form>
+    {% endif %}
+</body>
+</html>
