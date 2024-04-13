@@ -1,4 +1,7 @@
 // Funcion que controla el comportamiento para mover las fichas
+
+let droppedFichas = {}
+
 function makeDraggable(element) {
     var startPosition = { left: element.style.left, top: element.style.top };
     var ficha_name = element.id;
@@ -38,7 +41,8 @@ function makeDraggable(element) {
 
             if (overlappingZones.length > 0) {
                 spawnNewFicha(element, startPosition);
-                notificarDropZone(overlappingZones, ficha_name);
+                droppedFichas[ficha_name] = overlappingZones
+
             } else {
                 element.style.left = startPosition.left;
                 element.style.top = startPosition.top;
@@ -60,15 +64,23 @@ function isDroppedInDropZone(x, y) {
     });
 }
 
-// Crear nueva ficha y hacer que se pueda mover
+// Clonar fichas
+var fichaCounter = 1;
+
 function spawnNewFicha(originalChip, startPosition) {
     var newChip = originalChip.cloneNode(true);
+
     originalChip.parentElement.appendChild(newChip);
     newChip.style.left = startPosition.left;
     newChip.style.top = startPosition.top;
 
+    fichaCounter++;
+
+    newChip.id = `ficha-5_${fichaCounter}`;
+
     makeDraggable(newChip);
 }
+
 
 //Hacer la llamada AJAX y notificar el backend que se ha soltado en la dropzone
 function notificarDropZone(zone, ficha) {
@@ -78,6 +90,21 @@ function notificarDropZone(zone, ficha) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ zone: zone, ficha: ficha}),
+    })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+function updateDroppedFichas(){
+    fetch('/drop-zone', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(droppedFichas),
     })
     .then(response => response.text())
     .then(data => console.log(data))

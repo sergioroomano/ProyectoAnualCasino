@@ -60,8 +60,8 @@ body {
 #zone-1{
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 157px;
     opacity: 50%;
 }
@@ -69,8 +69,8 @@ body {
 #zone-4{
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 276px;
     opacity: 50%;
 }
@@ -78,8 +78,8 @@ body {
 #zone-7 {
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 396px;
     opacity: 50%;
 }
@@ -87,8 +87,8 @@ body {
 #zone-10 {
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 515px;
     opacity: 50%;
 }
@@ -96,8 +96,8 @@ body {
 #zone-13 {
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 636px;
     opacity: 50%;
 }
@@ -105,8 +105,8 @@ body {
 #zone-16 {
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 755px;
     opacity: 50%;
 }
@@ -114,8 +114,8 @@ body {
 #zone-19 {
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 877px;
     opacity: 50%;
 }
@@ -123,8 +123,8 @@ body {
 #zone-22 {
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 996px;
     opacity: 50%;
 }
@@ -132,8 +132,8 @@ body {
 #zone-25 {
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 1117px;
     opacity: 50%;
 }
@@ -141,8 +141,8 @@ body {
 #zone-28 {
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 1235px;
     opacity: 50%;
 }
@@ -150,8 +150,8 @@ body {
 #zone-31 {
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 1357px;
     opacity: 50%;
 }
@@ -159,11 +159,14 @@ body {
 #zone-34 {
     position: absolute;
     width: 97px;
-    height: 76px;
-    top: 150px;
+    height: 46px;
+    top: 180px;
     left: 1475px;
     opacity: 50%;
 }
+
+
+
 
 #zone-2{
     position: absolute;
@@ -276,7 +279,7 @@ body {
 #zone-3{
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 157px;
     opacity: 50%;
@@ -285,7 +288,7 @@ body {
 #zone-6{
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 276px;
     opacity: 50%;
@@ -294,7 +297,7 @@ body {
 #zone-9 {
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 396px;
     opacity: 50%;
@@ -303,7 +306,7 @@ body {
 #zone-12 {
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 515px;
     opacity: 50%;
@@ -312,7 +315,7 @@ body {
 #zone-15 {
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 636px;
     opacity: 50%;
@@ -321,7 +324,7 @@ body {
 #zone-18 {
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 755px;
     opacity: 50%;
@@ -330,7 +333,7 @@ body {
 #zone-21 {
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 877px;
     opacity: 50%;
@@ -339,7 +342,7 @@ body {
 #zone-24 {
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 996px;
     opacity: 50%;
@@ -348,7 +351,7 @@ body {
 #zone-27 {
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 1117px;
     opacity: 50%;
@@ -357,7 +360,7 @@ body {
 #zone-30 {
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 1235px;
     opacity: 50%;
@@ -366,7 +369,7 @@ body {
 #zone-33 {
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 1357px;
     opacity: 50%;
@@ -375,7 +378,7 @@ body {
 #zone-36 {
     position: absolute;
     width: 97px;
-    height: 76px;
+    height: 46px;
     top: 350px;
     left: 1475px;
     opacity: 50%;
@@ -437,60 +440,64 @@ body {
 
 #zone-1_18{
     position: absolute;
-    width: 215px;
-    height: 55px;
-    top: 450px;
-    left: 157px;
+    width: 140px;
+    height: 15px;
+    top: 495px;
+    left: 187px;
     opacity: 50%;
 }
 
 #zone-19_36{
     position: absolute;
-    width: 215px;
-    height: 55px;
-    top: 450px;
-    left: 1359px;
+    width: 140px;
+    height: 15px;
+    top: 495px;
+    left: 1389px;
     opacity: 50%;
 }
 
 #zone-par{
     position: absolute;
-    width: 155px;
-    height: 55px;
-    top: 450px;
-    left: 428px;
+    width: 140px;
+    height: 15px;
+    top: 495px;
+    left: 438px;
     opacity: 50%;
 }
 
 #zone-impar{
     position: absolute;
-    width: 155px;
-    height: 55px;
-    top: 450px;
-    left: 1149px;
+    width: 140px;
+    height: 15px;
+    top: 495px;
+    left: 1159px;
     opacity: 50%;
 }
 
 #zone-rojo{
     position: absolute;
-    width: 155px;
-    height: 55px;
-    top: 450px;
-    left: 668px;
+    width: 140px;
+    height: 15px;
+    top: 495px;
+    left: 678px;
     opacity: 50%;
 }
 
 #zone-negro{
     position: absolute;
-    width: 155px;
-    height: 55px;
-    top: 450px;
-    left: 909px;
+    width: 140px;
+    height: 15px;
+    top: 495px;
+    left: 919px;
     opacity: 50%;
 }
 
 
-#ficha-5 {
+
+
+
+
+[id^="ficha-5_"], #ficha-5_1 {
     top: 650px;
     left: 850px;
 }

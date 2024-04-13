@@ -20,35 +20,16 @@ def ruleta():
 # Funcion Archaica de lo que seria girar la ruleta CAMBIAR
 @app.route('/drop-zone', methods=['POST'])
 def handle_drop_zone():
-    print("FICHA DROPEADA")
-    if "data" in session:
-        print("Added: ", request.json, " to session data")
-        session['data'].append(request.json)
-        session.modified = True
-    else:
-        session["data"] = [request.json]
-        print("Created session data with: ", request.json)
-        print("Session data: ", session["data"])
-
-    print("Dropped Ficha en: ", session['data'])
+    print("Chip Data Recieved")
+    print("Chip Data: ", request.json)
+    session["data"] = [request.json]
+    print("Created session data with: ", request.json)
+    print("Session data: ", session["data"])
     return jsonify({"message": "Data received"}), 200
 
 @app.route('/girar-ruleta', methods=['POST'])
 def girar_ruleta():
-    print("RULETA GIRADA")
-    if 'data' in session:
-        current_data = session['data']
-
-        print("session data: ", session["data"])
-        print("current data: ", current_data)
-
-        session.pop('data', None)
-        print("Confirmed Ficha en: ", current_data)
-        funcionalidad_ruleta(current_data)
-
-        return jsonify({"message": "Confirmed Ficha en: " + str(current_data)}), 200
-    else:
-        return jsonify({"message": "No data found"}), 404
+    pass
 
 def funcionalidad_ruleta(data):
     numero_ganador = random.randint(0,37)

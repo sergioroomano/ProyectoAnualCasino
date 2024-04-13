@@ -73,13 +73,11 @@
 
         </div>
 
-        <form action="/girar-ruleta" method="post">
-            <button type="submit" class="ruleta-botones" id="boton-girar">GIRAR</button>
-        </form>
+        <button onclick = "updateDroppedFichas()" class="ruleta-botones" id="boton-girar">GIRAR</button>
 
         <button class="ruleta-botones" id="boton-limpiar">LIMPIAR</button>
 
-        <div class="ficha" id="ficha-5">
+        <div class="ficha" id="ficha-5_1">
             <img src="{{ url_for('static', filename='images/ficha_5.png') }}"/>
         </div>
 
