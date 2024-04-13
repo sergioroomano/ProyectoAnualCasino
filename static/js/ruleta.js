@@ -44,6 +44,9 @@ function makeDraggable(element) {
                 droppedFichas[ficha_name] = overlappingZones
 
             } else {
+                if (ficha_name in droppedFichas){
+                    delete droppedFichas[ficha_name];
+                }
                 element.style.left = startPosition.left;
                 element.style.top = startPosition.top;
             }
@@ -69,14 +72,14 @@ var fichaCounter = 1;
 
 function spawnNewFicha(originalChip, startPosition) {
     var newChip = originalChip.cloneNode(true);
-
+    var originalId = originalChip.id
     originalChip.parentElement.appendChild(newChip);
     newChip.style.left = startPosition.left;
     newChip.style.top = startPosition.top;
 
     fichaCounter++;
 
-    newChip.id = `ficha-5_${fichaCounter}`;
+    newChip.id = `${originalId.split("_")[0]}_${fichaCounter}`;
 
     makeDraggable(newChip);
 }

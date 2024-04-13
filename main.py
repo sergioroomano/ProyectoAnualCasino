@@ -25,15 +25,24 @@ def handle_drop_zone():
     session["data"] = [request.json]
     print("Created session data with: ", request.json)
     print("Session data: ", session["data"])
+
+    funcionalidad_ruleta()
     return jsonify({"message": "Data received"}), 200
 
-@app.route('/girar-ruleta', methods=['POST'])
-def girar_ruleta():
-    numero_ganador = random.randint(0,37)
+def funcionalidad_ruleta():
+    for entry in session["data"]:
+        for ficha in entry:
+            print("FICHA: ", ficha)
+            ficha_valor = int((ficha.split("-")[1]).split("_")[0])
+            ficha_posiciones = []
 
-    print("GIRADO LA RULETA", session["data"], numero_ganador)
-    return session["data"], numero_ganador
+            for zone in entry[ficha]:
+                ficha_posiciones.append(zone.split("-")[1])
 
+
+            print("FICHA VALOR: ", ficha_valor)
+            print("FICHA POSICION: ", ficha_posiciones)
+    return
 # Piedra Papel o Tijera contra el servidor
 @app.route('/piedra-papel-tijera', methods=['GET', 'POST'])
 def rock_paper_scissors():

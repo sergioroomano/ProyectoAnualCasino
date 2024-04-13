@@ -27,6 +27,8 @@ body {
     position: absolute;
     top: 690px;
     left: 300px;
+    width: 60px;
+    height: 60px;
     color: white;
     padding: 10px;
 }
@@ -499,22 +501,22 @@ body {
     left: 850px;
 }
 
-#ficha-10 {
+[id^="ficha-10_"], #ficha-10 {
     top: 650px;
     left: 940px;
 }
 
-#ficha-20 {
+[id^="ficha-20_"], #ficha-20 {
     top: 650px;
     left: 1030px;
 }
 
-#ficha-50 {
+[id^="ficha-50_"], #ficha-50 {
     top: 650px;
     left: 1120px;
 }
 
-#ficha-100 {
+[id^="ficha-100_"], #ficha-100 {
     top: 650px;
     left: 1210px;
 }
