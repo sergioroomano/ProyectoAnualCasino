@@ -165,9 +165,6 @@ body {
     opacity: 50%;
 }
 
-
-
-
 #zone-2{
     position: absolute;
     width: 97px;
@@ -414,7 +411,7 @@ body {
 #zone-1_12{
     position: absolute;
     width: 457px;
-    height: 36px;
+    height: 21px;
     top: 90px;
     left: 157px;
     opacity: 50%;
@@ -423,7 +420,7 @@ body {
 #zone-2_12{
     position: absolute;
     width: 457px;
-    height: 36px;
+    height: 21px;
     top: 90px;
     left: 638px;
     opacity: 50%;
@@ -432,7 +429,7 @@ body {
 #zone-3_12{
     position: absolute;
     width: 457px;
-    height: 36px;
+    height: 21px;
     top: 90px;
     left: 1117px;
     opacity: 50%;
