@@ -29,26 +29,10 @@ def handle_drop_zone():
 
 @app.route('/girar-ruleta', methods=['POST'])
 def girar_ruleta():
-    pass
-
-def funcionalidad_ruleta(data):
     numero_ganador = random.randint(0,37)
 
-    dinero_apostado = 0
-
-    numeros_zona_apostados = []
-    numeros_apostados = set()
-
-    for apuesta in data:
-        dinero_apostado += int((apuesta["ficha"].split("-"))[1])
-        numeros_zona_apostados += apuesta["zone"]
-
-    for zona in numeros_zona_apostados:
-        numeros_apostados.add((zona.split("-")[1]))
-
-    print(dinero_apostado)
-    print(numeros_apostados)
-
+    print("GIRADO LA RULETA", session["data"], numero_ganador)
+    return session["data"], numero_ganador
 
 # Piedra Papel o Tijera contra el servidor
 @app.route('/piedra-papel-tijera', methods=['GET', 'POST'])
