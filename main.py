@@ -83,12 +83,6 @@ def funcionalidad_ruleta():
             ficha_valor = int((ficha.split("-")[1]).split("_")[0])
 
             ficha_posiciones = []
-            for zone in entry[ficha]:
-                zona_con_ficha = zone.split("-")[1]
-                if zona_con_ficha.isdigit():
-                    ficha_posiciones.append(zona_con_ficha)
-                else:
-                    ficha_posiciones.append(posibles_apuestas[zona_con_ficha])
 
             print("FICHA VALOR: ", ficha_valor)
             print("FICHA POSICION: ", ficha_posiciones)
