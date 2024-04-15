@@ -19,6 +19,11 @@ def ruleta():
 
 # Funcion que Controla la admision de datos desde la front-end
 # Los datos recibidos estan en el formato de [{ficha_nombre_id: [zonas_ocupadas]}]
+@app.route('/update_money', methods=['POST'])
+def update_money():
+    dinero_final = funcionalidad_ruleta()
+    return render_template('ruleta.html', dinero_final=dinero_final[0], NUM_GANADOR=dinero_final[1])
+
 @app.route('/drop-zone', methods=['POST'])
 def handle_drop_zone():
     print("Chip Data Recieved")
@@ -27,8 +32,6 @@ def handle_drop_zone():
     print("Created session data with: ", request.json)
     print("Session data: ", session["data"])
 
-    dinero_final = funcionalidad_ruleta()
-    print("DINERO FINAL: ", dinero_final)
     return jsonify({"message": "Data received"}), 200
 
 # Función base de la funcionalidad de la ruleta
@@ -49,7 +52,7 @@ def funcionalidad_ruleta():
         print("FICHA VALOR: ", ficha_valor)
         print("FICHA POSICION: ", ficha_posiciones)
 
-    return dinero_final
+    return dinero_final, numero_ganador
 
 def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
     numeros_rojos = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
@@ -99,8 +102,8 @@ def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
             dinero_final = ficha_valor + ficha_valor * multiplicador
         else:
             print("Has perdido!")
-    print("DEBUG FOR: ", numero_ganador, "in", ficha_posiciones)
-    if numero_ganador in ficha_posiciones:
+    print("DEBUG FOR: ", str(numero_ganador), "in", ficha_posiciones)
+    if str(numero_ganador) in ficha_posiciones:
         multiplicador = diccionario_multiplicadores[len(ficha_posiciones)]
         print("Has ganado!")
         print("Has ganado: ", ficha_valor * multiplicador)
