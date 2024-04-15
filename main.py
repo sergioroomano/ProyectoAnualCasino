@@ -27,26 +27,29 @@ def handle_drop_zone():
     print("Created session data with: ", request.json)
     print("Session data: ", session["data"])
 
-    funcionalidad_ruleta()
+    dinero_final = funcionalidad_ruleta()
+    print("DINERO FINAL: ", dinero_final)
     return jsonify({"message": "Data received"}), 200
 
 # Función base de la funcionalidad de la ruleta
 def funcionalidad_ruleta():
-    numero_ganador = random.randint(0,37)
-    for entry in session["data"]:
-        for ficha in entry:
-            print("FICHA: ", ficha)
-            ficha_valor = int((ficha.split("-")[1]).split("_")[0])
+    numero_ganador = random.randint(0,36)
+    session_data = session["data"][0]
+    dinero_final = 0
+    for ficha in session_data:
+        print("FICHA: ", ficha)
+        ficha_valor = int((ficha.split("-")[1]).split("_")[0])
 
-            ficha_posiciones = []
-            for zona in entry[ficha]:
-                ficha_posiciones.append(int(zona.split("-")[1]))
+        ficha_posiciones = []
+        print(ficha)
+        for zona in session_data[ficha]:
+            ficha_posiciones.append(zona.split("-")[1])
 
-            calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador)
-            print("FICHA VALOR: ", ficha_valor)
-            print("FICHA POSICION: ", ficha_posiciones)
+        dinero_final += calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador)
+        print("FICHA VALOR: ", ficha_valor)
+        print("FICHA POSICION: ", ficha_posiciones)
 
-    return
+    return dinero_final
 
 def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
     numeros_rojos = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
@@ -78,7 +81,7 @@ def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
     }
 
     propiedades_numero_ganador = []
-
+    dinero_final = 0
     print("NUMERO GANADOR: ", numero_ganador)
     for apuesta in posibles_apuestas:
         if numero_ganador in posibles_apuestas[apuesta][0]:
@@ -90,8 +93,10 @@ def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
 
     if len(ficha_posiciones) == 1 and not ficha_posiciones[0].isdigit():
         if ficha_posiciones[0] in propiedades_numero_ganador:
+            multiplicador = posibles_apuestas[ficha_posiciones[0]][1]
             print("Has ganado!")
-            print("Has ganado: ", ficha_valor * posibles_apuestas[ficha_posiciones[0]][1])
+            print("Has ganado: ", ficha_valor * multiplicador)
+            dinero_final = ficha_valor + ficha_valor * multiplicador
         else:
             print("Has perdido!")
     print("DEBUG FOR: ", numero_ganador, "in", ficha_posiciones)
@@ -99,7 +104,9 @@ def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
         multiplicador = diccionario_multiplicadores[len(ficha_posiciones)]
         print("Has ganado!")
         print("Has ganado: ", ficha_valor * multiplicador)
+        dinero_final = ficha_valor + ficha_valor * multiplicador
 
+    return dinero_final
 # Piedra Papel o Tijera contra el servidor
 @app.route('/piedra-papel-tijera', methods=['GET', 'POST'])
 def rock_paper_scissors():
