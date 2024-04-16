@@ -85,7 +85,9 @@ def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
 
     propiedades_numero_ganador = []
     dinero_final = 0
+
     print("NUMERO GANADOR: ", numero_ganador)
+
     for apuesta in posibles_apuestas:
         if numero_ganador in posibles_apuestas[apuesta][0]:
             propiedades_numero_ganador.append(apuesta)
