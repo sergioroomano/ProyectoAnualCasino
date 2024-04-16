@@ -56,7 +56,7 @@ body {
     height: 275px;
     top: 150px;
     left: 55px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-1{
@@ -65,7 +65,7 @@ body {
     height: 46px;
     top: 180px;
     left: 157px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-4{
@@ -74,7 +74,7 @@ body {
     height: 46px;
     top: 180px;
     left: 276px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-7 {
@@ -83,7 +83,7 @@ body {
     height: 46px;
     top: 180px;
     left: 396px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-10 {
@@ -92,7 +92,7 @@ body {
     height: 46px;
     top: 180px;
     left: 515px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-13 {
@@ -101,7 +101,7 @@ body {
     height: 46px;
     top: 180px;
     left: 636px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-16 {
@@ -110,7 +110,7 @@ body {
     height: 46px;
     top: 180px;
     left: 755px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-19 {
@@ -119,7 +119,7 @@ body {
     height: 46px;
     top: 180px;
     left: 877px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-22 {
@@ -128,7 +128,7 @@ body {
     height: 46px;
     top: 180px;
     left: 996px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-25 {
@@ -137,7 +137,7 @@ body {
     height: 46px;
     top: 180px;
     left: 1117px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-28 {
@@ -146,7 +146,7 @@ body {
     height: 46px;
     top: 180px;
     left: 1235px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-31 {
@@ -155,7 +155,7 @@ body {
     height: 46px;
     top: 180px;
     left: 1357px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-34 {
@@ -164,7 +164,7 @@ body {
     height: 46px;
     top: 180px;
     left: 1475px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-2{
@@ -173,7 +173,7 @@ body {
     height: 76px;
     top: 250px;
     left: 157px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-5{
@@ -182,7 +182,7 @@ body {
     height: 76px;
     top: 250px;
     left: 276px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-8 {
@@ -191,7 +191,7 @@ body {
     height: 76px;
     top: 250px;
     left: 396px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-11 {
@@ -200,7 +200,7 @@ body {
     height: 76px;
     top: 250px;
     left: 515px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-14 {
@@ -209,7 +209,7 @@ body {
     height: 76px;
     top: 250px;
     left: 636px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-17 {
@@ -218,7 +218,7 @@ body {
     height: 76px;
     top: 250px;
     left: 755px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-20 {
@@ -227,7 +227,7 @@ body {
     height: 76px;
     top: 250px;
     left: 877px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-23 {
@@ -236,7 +236,7 @@ body {
     height: 76px;
     top: 250px;
     left: 996px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-26 {
@@ -245,7 +245,7 @@ body {
     height: 76px;
     top: 250px;
     left: 1117px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-29 {
@@ -254,7 +254,7 @@ body {
     height: 76px;
     top: 250px;
     left: 1235px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-32 {
@@ -263,7 +263,7 @@ body {
     height: 76px;
     top: 250px;
     left: 1357px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-35 {
@@ -272,7 +272,7 @@ body {
     height: 76px;
     top: 250px;
     left: 1475px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-3{
@@ -281,7 +281,7 @@ body {
     height: 46px;
     top: 350px;
     left: 157px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-6{
@@ -290,7 +290,7 @@ body {
     height: 46px;
     top: 350px;
     left: 276px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-9 {
@@ -299,7 +299,7 @@ body {
     height: 46px;
     top: 350px;
     left: 396px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-12 {
@@ -308,7 +308,7 @@ body {
     height: 46px;
     top: 350px;
     left: 515px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-15 {
@@ -317,7 +317,7 @@ body {
     height: 46px;
     top: 350px;
     left: 636px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-18 {
@@ -326,7 +326,7 @@ body {
     height: 46px;
     top: 350px;
     left: 755px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-21 {
@@ -335,7 +335,7 @@ body {
     height: 46px;
     top: 350px;
     left: 877px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-24 {
@@ -344,7 +344,7 @@ body {
     height: 46px;
     top: 350px;
     left: 996px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-27 {
@@ -353,7 +353,7 @@ body {
     height: 46px;
     top: 350px;
     left: 1117px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-30 {
@@ -362,7 +362,7 @@ body {
     height: 46px;
     top: 350px;
     left: 1235px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-33 {
@@ -371,7 +371,7 @@ body {
     height: 46px;
     top: 350px;
     left: 1357px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-36 {
@@ -380,7 +380,7 @@ body {
     height: 46px;
     top: 350px;
     left: 1475px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-2_1{
@@ -389,7 +389,7 @@ body {
     height: 76px;
     top: 150px;
     left: 1595px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-2_2{
@@ -398,7 +398,7 @@ body {
     height: 76px;
     top: 250px;
     left: 1595px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-2_3{
@@ -407,7 +407,7 @@ body {
     height: 76px;
     top: 350px;
     left: 1595px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-1_12{
@@ -416,7 +416,7 @@ body {
     height: 21px;
     top: 90px;
     left: 157px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-2_12{
@@ -425,7 +425,7 @@ body {
     height: 21px;
     top: 90px;
     left: 638px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-3_12{
@@ -434,7 +434,7 @@ body {
     height: 21px;
     top: 90px;
     left: 1117px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-1_18{
@@ -443,7 +443,7 @@ body {
     height: 15px;
     top: 495px;
     left: 187px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-19_36{
@@ -452,7 +452,7 @@ body {
     height: 15px;
     top: 495px;
     left: 1389px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-par{
@@ -461,7 +461,7 @@ body {
     height: 15px;
     top: 495px;
     left: 438px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-impar{
@@ -470,7 +470,7 @@ body {
     height: 15px;
     top: 495px;
     left: 1159px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-rojo{
@@ -479,7 +479,7 @@ body {
     height: 15px;
     top: 495px;
     left: 678px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 #zone-negro{
@@ -488,7 +488,7 @@ body {
     height: 15px;
     top: 495px;
     left: 919px;
-    opacity: 50%;
+    opacity: 0%;
 }
 
 
@@ -522,7 +522,7 @@ body {
 }
 
 
-#boton-girar {
+#boton-cerrar {
     top: 690px;
     left: 50px;
 
@@ -533,7 +533,7 @@ body {
     color: #fff;
 }
 
-#boton-limpiar {
+#boton-girar {
     top: 829px;
     left: 50px;
 

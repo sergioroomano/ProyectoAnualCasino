@@ -73,10 +73,16 @@
 
         </div>
 
-        <p class="text-container"> NUMERO </p>
+        <p class="text-container"> {{DINERO_FINAL}} </p>
 
-        <button onclick = "updateDroppedFichas()" class="ruleta-botones" id="boton-girar">GIRAR</button>
+        <h1 class="text-container"> Num: {{NUM_GANADOR}}
+        Money: {{ dinero_final }} </h1>
 
+        <form method="post" action="/update_money">
+            <button class="ruleta-botones" id="boton-girar">GIRAR</button>
+        </form>
+
+        <button onclick = "updateDroppedFichas()" class="ruleta-botones" id="boton-cerrar">CERRAR</button>
         <button class="ruleta-botones" id="boton-limpiar">LIMPIAR</button>
 
         <div class="ficha" id="ficha-5_1">

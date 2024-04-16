@@ -19,6 +19,11 @@ def ruleta():
 
 # Funcion que Controla la admision de datos desde la front-end
 # Los datos recibidos estan en el formato de [{ficha_nombre_id: [zonas_ocupadas]}]
+@app.route('/update_money', methods=['POST'])
+def update_money():
+    dinero_final = funcionalidad_ruleta()
+    return render_template('ruleta.html', dinero_final=dinero_final[0], NUM_GANADOR=dinero_final[1])
+
 @app.route('/drop-zone', methods=['POST'])
 def handle_drop_zone():
     print("Chip Data Recieved")
@@ -27,8 +32,6 @@ def handle_drop_zone():
     print("Created session data with: ", request.json)
     print("Session data: ", session["data"])
 
-    dinero_final = funcionalidad_ruleta()
-    print("DINERO FINAL: ", dinero_final)
     return jsonify({"message": "Data received"}), 200
 
 # Función base de la funcionalidad de la ruleta
@@ -49,18 +52,23 @@ def funcionalidad_ruleta():
         print("FICHA VALOR: ", ficha_valor)
         print("FICHA POSICION: ", ficha_posiciones)
 
-    return dinero_final
+    return dinero_final, numero_ganador
 
 def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
     numeros_rojos = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
     numeros_negros = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35]
     numeros_par =  [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36]
     numeros_impar = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35]
+
     numeros_1_12 = list(range(1,13))
+    numeros_2_12 = list(range(13,25))
+    numeros_3_12 = list(range(25,37))
+
     numeros_13_24 = list(range(13,25))
     numeros_25_37 = list(range(25,37))
     numeros_1_18 = list(range(1,19))
-    numeros_19_37 = list(range(19,37))
+    numeros_19_36 = list(range(19,37))
+
     numeros_2_1 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34]
     numeros_2_2 = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35]
     numeros_2_3 = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36]
@@ -70,19 +78,23 @@ def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
     "negro": (numeros_negros, 1),
     "par": (numeros_par, 1),
     "impar": (numeros_impar, 1),
-    "1_12": (numeros_1_12, 2),
     "13_24": (numeros_13_24, 2),
     "25_37": (numeros_25_37, 2),
     "1_18": (numeros_1_18, 1),
-    "19_37": (numeros_19_37, 1),
+    "19_36": (numeros_19_36, 1),
     "2_1": (numeros_2_1, 2),
     "2_2": (numeros_2_2, 2),
-    "2_3": (numeros_2_3, 2)
+    "2_3": (numeros_2_3, 2),
+    "1_12": (numeros_1_12, 2),
+    "2_12": (numeros_2_12, 2),
+    "3_12":(numeros_3_12, 2)
     }
 
     propiedades_numero_ganador = []
     dinero_final = 0
+
     print("NUMERO GANADOR: ", numero_ganador)
+
     for apuesta in posibles_apuestas:
         if numero_ganador in posibles_apuestas[apuesta][0]:
             propiedades_numero_ganador.append(apuesta)
@@ -99,8 +111,8 @@ def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
             dinero_final = ficha_valor + ficha_valor * multiplicador
         else:
             print("Has perdido!")
-    print("DEBUG FOR: ", numero_ganador, "in", ficha_posiciones)
-    if numero_ganador in ficha_posiciones:
+    print("DEBUG FOR: ", str(numero_ganador), "in", ficha_posiciones)
+    if str(numero_ganador) in ficha_posiciones:
         multiplicador = diccionario_multiplicadores[len(ficha_posiciones)]
         print("Has ganado!")
         print("Has ganado: ", ficha_valor * multiplicador)
