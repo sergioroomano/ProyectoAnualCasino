@@ -3,6 +3,11 @@ import random
 
 ruleta_bp = Blueprint('ruleta', __name__, template_folder='templates')
 
+# Online PPT
+@app.route('/online-ppt')
+def online_ppt():
+    return render_template('online_ppt.html')
+
 # Ruleta
 @ruleta_bp.route('/ruleta')
 def ruleta():
