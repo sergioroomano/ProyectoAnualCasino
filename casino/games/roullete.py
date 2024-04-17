@@ -1,37 +1,21 @@
-from flask import Flask, render_template, request, jsonify, session
+from flask import Blueprint, render_template, request, jsonify, session
 import random
 
-app = Flask(__name__)
-app.secret_key = "your_secret_key"
-
-@app.route('/')
-def principal():
-    return render_template('principal.html')
-
-@app.route('/juegos')
-def select_juego():
-    return render_template('juegos.html')
-
-# ONLINE ppt
-@app.route('/mp-ppt')
-def online_ppt():
-    return render_template('mp-ppt')
-
-
+ruleta_bp = Blueprint('ruleta', __name__, template_folder='templates')
 
 # Ruleta
-@app.route('/ruleta')
+@ruleta_bp.route('/ruleta')
 def ruleta():
-    return render_template('ruleta.html')
+    return render_template('ruleta.html',resultado=None)
 
 # Funcion que Controla la admision de datos desde la front-end
 # Los datos recibidos estan en el formato de [{ficha_nombre_id: [zonas_ocupadas]}]
-@app.route('/update_money', methods=['POST'])
+@ruleta_bp.route('/update_money', methods=['POST'])
 def update_money():
     dinero_final = funcionalidad_ruleta()
     return render_template('ruleta.html', dinero_final=dinero_final[0], NUM_GANADOR=dinero_final[1])
 
-@app.route('/drop-zone', methods=['POST'])
+@ruleta_bp.route('/drop-zone', methods=['POST'])
 def handle_drop_zone():
     print("Chip Data Recieved")
     print("Chip Data: ", request.json)
@@ -126,22 +110,3 @@ def calcular_ganador(ficha_valor, ficha_posiciones, numero_ganador):
         dinero_final = ficha_valor + ficha_valor * multiplicador
 
     return dinero_final
-# Piedra Papel o Tijera contra el servidor
-@app.route('/piedra-papel-tijera', methods=['GET', 'POST'])
-def rock_paper_scissors():
-    if request.method == 'POST':
-        user_choice = request.form['choice']
-        server_choice = random.choice(['piedra', 'papel', 'tijera'])
-        result = determinar_ganador(user_choice, server_choice)
-        return render_template('piedra_papel_tijera.html', user_choice=user_choice, server_choice=server_choice, result=result)
-    return render_template('piedra_papel_tijera.html', user_choice=None, server_choice=None, result=None)
-
-def determinar_ganador(user, server):
-    if user == server:
-        return 'Empate!'
-    elif (user == 'piedra' and server == 'tijera') or \
-         (user == 'tijera' and server == 'papel') or \
-         (user == 'papel' and server == 'piedra'):
-        return 'Has Ganado!'
-    else:
-        return 'Has Perdido!'
