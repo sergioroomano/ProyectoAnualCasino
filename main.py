@@ -12,6 +12,11 @@ def principal():
 def select_juego():
     return render_template('juegos.html')
 
+# Online PPT
+@app.route('/online-ppt')
+def online_ppt():
+    return render_template('online_ppt.html')
+
 # Ruleta
 @app.route('/ruleta')
 def ruleta():
