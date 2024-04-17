@@ -12,10 +12,17 @@ def principal():
 def select_juego():
     return render_template('juegos.html')
 
+# ONLINE ppt
+@app.route('/mp-ppt')
+def online_ppt():
+    return render_template('mp-ppt')
+
+
+
 # Ruleta
 @app.route('/ruleta')
 def ruleta():
-    return render_template('ruleta.html',resultado=None)
+    return render_template('ruleta.html')
 
 # Funcion que Controla la admision de datos desde la front-end
 # Los datos recibidos estan en el formato de [{ficha_nombre_id: [zonas_ocupadas]}]
