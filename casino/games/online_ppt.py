@@ -46,7 +46,7 @@ def online_ppt():
         username = request.form['username']
         all_usernames = get_all_usernames()
         all_id = get_all_id()
-        
+
         print(all_usernames)
         print(all_id)
 
@@ -63,3 +63,8 @@ def online_ppt():
             print(f"User {username} was not found in the database.")
 
     return render_template('online-ppt.html')
+
+@p_ppt.route('/wipe-users', methods=['GET'])
+def wipe_users():
+    wipe_users()
+    return "Users wiped."
