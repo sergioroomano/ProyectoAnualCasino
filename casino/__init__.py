@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from .games.roullete import ruleta_bp
 from .games.piedra_papel_tijeras import ppt
+from .games.online_ppt import o_ppt
 
 def create_app():
     app = Flask(__name__)
@@ -8,6 +9,7 @@ def create_app():
 
     app.register_blueprint(ruleta_bp)
     app.register_blueprint(ppt)
+    app.register_blueprint(o_ppt)
 
     @app.route('/')
     def principal():
