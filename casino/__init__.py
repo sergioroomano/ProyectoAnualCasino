@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from .games.roullete import ruleta_bp
 from .games.piedra_papel_tijeras import ppt
+from .games.online_ppt import o_ppt
 
 def create_app():
     app = Flask(__name__)
@@ -8,6 +9,7 @@ def create_app():
 
     app.register_blueprint(ruleta_bp)
     app.register_blueprint(ppt)
+    app.register_blueprint(o_ppt)
 
     @app.route('/')
     def principal():
@@ -17,9 +19,4 @@ def create_app():
     def select_juego():
         return render_template('juegos.html')
 
-    @app.route('/online-ppt', methods=['GET', 'POST'])
-    def online_ppt():
-        if request.method == "POST":
-            username = request.form['username']
-            print(username)
-    return render_template('online-ppt.html')
+    return app
