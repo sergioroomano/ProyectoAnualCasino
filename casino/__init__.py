@@ -26,3 +26,4 @@ def create_app():
         return render_template('juegos.html')
 
     return app
+

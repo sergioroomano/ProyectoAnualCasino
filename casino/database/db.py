@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-DATABASE_URI = 'mysql+mysqldb://mascaro101:laquegana123@mascaro101.mysql.pythonanywhere-services.com/CasinoDB'
+DATABASE_URI = 'mysql://mascaro101:laquegana123@mascaro101.mysql.pythonanywhere-services.com:3306/mascaro101$CasinoDB'
 
 engine = create_engine(DATABASE_URI)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

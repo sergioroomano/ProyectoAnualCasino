@@ -1,7 +1,7 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Bolean
-from db import base
+from sqlalchemy import Column, String
+from casino.database.db import Base
 
-class User(base):
+class User(Base):
     __tablename__ = 'users'
 
-    username = Column(String)
+    username = Column(String(255), primary_key=True)
