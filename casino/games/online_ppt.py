@@ -4,6 +4,12 @@ from casino.database.models import User
 
 o_ppt = Blueprint('o_ppt', __name__, template_folder='templates')
 
+def get_all_usernames():
+    db = SessionLocal()
+    users = db.query(User).all()
+    db.close()
+    return [user.username for user in users]
+
 def create_user(username):
     db = SessionLocal()
     new_user = User(username=username)
@@ -15,9 +21,11 @@ def create_user(username):
 
 @o_ppt.route('/online-ppt', methods=['GET', 'POST'])
 def online_ppt():
+    
     if request.method == "POST":
         username = request.form['username']
-        print(username)
+        all_usernames = get_all_usernames()
+        print(all_usernames)
 
         create_user(username)
 
