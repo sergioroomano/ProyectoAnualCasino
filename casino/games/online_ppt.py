@@ -29,7 +29,7 @@ def insert_user(username):
     else:
         return "Username taken"
 
-    return render_template('online-ppt.html')
+    return render_template('online-ppt-create-session.html', USER_ID = user_id, USERNAME = username)
 
 @o_ppt.route('/online-ppt', methods=['GET', 'POST'])
 def online_ppt():
@@ -39,7 +39,9 @@ def online_ppt():
 
         print(username)
 
-    return insert_user(username)
+        return insert_user(username)
+
+    return render_template('online-ppt.html')
 
 @o_ppt.route('/wipe-users')
 def clear_users_table():
