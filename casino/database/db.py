@@ -29,8 +29,8 @@ def create_rooms_table():
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS rooms (
                 room_id VARCHAR(100) PRIMARY KEY,
-                created_by VARCHAR(100) NOT NULL,
-                created_for VARCHAR(100) NOT NULL,
+                player_1 VARCHAR(100) NOT NULL,
+                player_2 VARCHAR(100) NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
