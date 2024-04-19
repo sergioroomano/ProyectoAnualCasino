@@ -21,3 +21,18 @@ def create_users_table():
         ''')
     connection.commit()
     connection.close()
+
+def create_rooms_table():
+    print("created rooms table")
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS rooms (
+                room_id VARCHAR(100) PRIMARY KEY,
+                created_by VARCHAR(100) NOT NULL,
+                created_for VARCHAR(100) NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+    connection.commit()
+    connection.close()

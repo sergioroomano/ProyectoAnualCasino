@@ -1,4 +1,5 @@
 import uuid
+import shortuuid
 
 from flask import Blueprint, render_template, request
 
@@ -11,6 +12,16 @@ def user_exists(username):
     with connection.cursor() as cursor:
         sql = "SELECT * FROM users WHERE username = %s"
         cursor.execute(sql, (username,))
+        result = cursor.fetchone()
+    connection.close()
+
+    return result is not None
+
+def room_exists(room_id):
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+        sql = "SELECT * FROM rooms WHERE room_id = %s"
+        cursor.execute(sql, (room_id,))
         result = cursor.fetchone()
     connection.close()
 
@@ -30,6 +41,19 @@ def insert_user(username):
         return "Username taken"
 
     return render_template('online-ppt-create-session.html', USER_ID = user_id, USERNAME = username)
+
+def insert_room(room_id):
+    connection = get_db_connection()
+    if not room_exists(room_id):
+        with connection.cursor() as cursor:
+            sql = "INSERT INTO rooms (room_id) VALUES (%s)"
+            cursor.execute(sql,(room_id,))
+        connection.commit()
+        connection.close()
+    else:
+        create_room()
+
+    return render_template('online-ppt-session.html', ROOM_ID = room_id)
 
 @o_ppt.route('/online-ppt', methods=['GET', 'POST'])
 def online_ppt():
@@ -51,3 +75,18 @@ def clear_users_table():
     connection.commit()
     connection.close()
     return "Users wiped."
+
+@o_ppt.route('/create-room')
+def create_room():
+    room_id_gen = shortuuid.ShortUUID("23456789ABCDEF")
+    room_id = room_id_gen.random(4)
+    insert_room(room_id)
+
+    return render_template('online-ppt-session.html', ROOM_ID = room_id)
+
+
+
+
+
+
+
