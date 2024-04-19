@@ -3,12 +3,14 @@ from .games.roullete import ruleta_bp
 from .games.piedra_papel_tijeras import ppt
 from .games.online_ppt import o_ppt
 
+from .database.db import create_users_table
+
 def create_app():
     app = Flask(__name__)
     app.secret_key = "your_secret_key"
 
     create_users_table()
-    
+
     app.register_blueprint(ruleta_bp)
     app.register_blueprint(ppt)
     app.register_blueprint(o_ppt)

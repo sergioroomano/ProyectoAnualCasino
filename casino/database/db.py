@@ -10,14 +10,14 @@ def get_db_connection():
     return connection
 
 def create_users_table():
+    print("created users table")
     connection = get_db_connection()
     with connection.cursor() as cursor:
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS users (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                username VARCHAR(100) NOT NULL,
+                id VARCHAR(100) PRIMARY KEY,
+                username VARCHAR(100) NOT NULL
             )
         ''')
-        cursor.execute(sql)
     connection.commit()
     connection.close()
