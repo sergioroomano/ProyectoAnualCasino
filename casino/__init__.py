@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from flask_socketio import SocketIO
+
 from .games.roullete import ruleta_bp
 from .games.piedra_papel_tijeras import ppt
 from .games.online_ppt import o_ppt
@@ -9,6 +11,7 @@ from .database.db import create_rooms_table
 def create_app():
     app = Flask(__name__)
     app.secret_key = "your_secret_key"
+    socketio = SocketIO(app)
 
     create_users_table()
     create_rooms_table()
@@ -25,5 +28,5 @@ def create_app():
     def select_juego():
         return render_template('juegos.html')
 
-    return app
+    return app, socketio
 

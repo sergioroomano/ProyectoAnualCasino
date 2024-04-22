@@ -2,6 +2,7 @@ import uuid
 import shortuuid
 
 from flask import Blueprint, render_template, request, session
+from flask_socketio import join_room, send, leave_room
 
 from casino.database.db import get_db_connection
 
@@ -28,7 +29,6 @@ def room_exists(room_id):
     return result is not None
 
 def insert_user(username, user_id):
-
     connection = get_db_connection()
     if not user_exists(username):
         with connection.cursor() as cursor:
@@ -44,6 +44,8 @@ def insert_user(username, user_id):
 def insert_room(room_id, user_id):
     connection = get_db_connection()
     if not room_exists(room_id):
+        join_room(room_id)
+        send(user_id + ' has entered the room.', room=room_id)
         with connection.cursor() as cursor:
             sql = "INSERT INTO rooms (room_id, player_1) VALUES (%s, %s)"
             cursor.execute(sql,(room_id,user_id))
