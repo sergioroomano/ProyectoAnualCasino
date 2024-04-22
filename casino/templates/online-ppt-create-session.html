@@ -12,7 +12,11 @@
         <h1>Username: {{USERNAME}}</h1>
         <h1>ID: {{USER_ID}}</h1>
 
-        <button>Join Lobby</button>
+        <form action="\join-room" method="post">
+            <label for="room_id">Room ID: </label>
+            <input type="text" id="room_id" name="room_id"></input>
+            <button name="join_room" id="join_room">Join Lobby</button>
+        </form>
 
         <form action="\create-room">
             <button>Create Lobby</button>

@@ -56,6 +56,34 @@ def insert_room(room_id, user_id):
 
     return render_template('online-ppt-session.html', ROOM_ID = room_id)
 
+def insert_player_2(user_id, room_id):
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+        sql = "UPDATE rooms SET player_2 = %s WHERE room_id = %s"
+        cursor.execute(sql,(user_id, room_id))
+    connection.commit()
+    connection.close()
+
+def get_username(user_id):
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+        sql = "SELECT username FROM users WHERE id = %s"
+        cursor.execute(sql,(user_id,))
+        username = cursor.fetchone()
+    connection.commit()
+
+    return username
+
+def get_player1(room_id):
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+        sql = "SELECT player_1 FROM rooms WHERE room_id = %s"
+        cursor.execute(sql,(room_id,))
+        player_1 = cursor.fetchone()
+    connection.close()
+
+    return player_1
+
 @o_ppt.route('/online-ppt', methods=['GET', 'POST'])
 def online_ppt():
 
@@ -95,7 +123,24 @@ def create_room():
     room_id = room_id_gen.random(4)
     insert_room(room_id, user_id)
 
-    return render_template('online-ppt-session.html', ROOM_ID = room_id)
+    username = get_username(user_id)
+    return render_template('online-ppt-session.html', ROOM_ID = room_id, PLAYER_1 = username)
+
+@o_ppt.route('/join-room', methods=['GET', 'POST'])
+def join_room():
+    if request.method == "POST":
+        room_id = request.form['room_id']
+        user_id = session.get('user_id')
+
+        if room_exists(room_id):
+            insert_player_2(user_id, room_id)
+
+    player_1 = get_username(get_player1(room_id)["player_1"])
+    player_2 = get_username(user_id)
+
+    return render_template('online-ppt-session.html', ROOM_ID = room_id, PLAYER_1 = player_1, PLAYER_2 = player_2)
+
+
 
 
 
