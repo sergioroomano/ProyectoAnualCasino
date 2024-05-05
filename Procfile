@@ -1,1 +1,1 @@
-web: python casino/run.py
+web: python run.py
